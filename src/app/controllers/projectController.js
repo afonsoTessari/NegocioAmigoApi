@@ -1,7 +1,7 @@
 const express = require('express');
 const authMiddleware = require('../middlewares/auth');
 
-const Poster = require('../models/Poster');
+const Poster = require('../models/poster');
 const router = express.Router();
 
 router.use(authMiddleware);
