@@ -24,7 +24,7 @@ router.get('/:posterId', async (req, res) => {
 router.post('/', async (req, res) => {
     
     try{
-        const poster = await Poster.create({...req.body, user: req.userId});
+        const poster = await Poster.create({...req.body, user: req.name});
 
         return res.send({ poster });
     } catch (err) {
