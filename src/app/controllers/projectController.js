@@ -35,7 +35,7 @@ router.get('/', async (req, res) => {
 
 
        // return res.send(posters); 
-       
+
     } catch(err){
         return res.status(400).send({ error: 'Error loading new poster'});
     }
@@ -50,9 +50,9 @@ router.post('/', async (req, res) => {
     try{
         const poster = await Poster.create({...req.body, user: req.userId});
 
-        const posterPopulated = await Poster.findOne({_id: poster._id}).populate('user');
+        //const posterPopulated = await Poster.findOne({_id: poster._id}).populate('user');
 
-        return res.send({poster: posterPopulated});
+        return res.send({poster});
     } catch (err) {
         return res.status(400).send({ error: 'Error creating new poster'});
     }
