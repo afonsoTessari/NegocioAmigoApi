@@ -34,7 +34,8 @@ router.get('/', async (req, res) => {
         return res.json(posters);
 
 
-       // return res.send(posters);
+       // return res.send(posters); 
+       
     } catch(err){
         return res.status(400).send({ error: 'Error loading new poster'});
     }
