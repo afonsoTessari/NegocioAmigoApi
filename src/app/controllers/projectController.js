@@ -50,9 +50,9 @@ router.post('/', async (req, res) => {
     try{
         const poster = await Poster.create({...req.body, user: req.userId});
 
-        //const posterPopulated = await Poster.findOne({_id: poster._id}).populate('user');
+        const posterPopulated = await Poster.findOne({_id: poster._id}).populate('user');
 
-        return res.send({poster});
+        return res.send({poster: posterPopulated});
     } catch (err) {
         return res.status(400).send({ error: 'Error creating new poster'});
     }
